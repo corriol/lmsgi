@@ -176,6 +176,27 @@ als autors crear text formatat a través de navegadors web, com els que s’util
 De vegades s’anomenen llenguatges de marcatge lleugers. Markdown i el llenguatge de marques utilitzat per la Viquipèdia
  en són exemples.
 
+{:.alert .alert-activity}
+<div markdown="1">
+### Exercicis
+1. Compara les diverses possibilitats d'exportació, a l'hora de guardar un document en LibreOffice Writer.
+2. Escriu en un fitxer de text pla el següent:
+	```html
+	<h1> encapçalat de nivell 1 </h1>
+	<h3> encapçalat de nivell 3 </h3>
+	```
+
+Obri este fitxer des del navegador. Còm es veu?
+Canvia-li la extensió del fitxer per html. Canvia la visualització?
+
+3. Busca en Internet una classificació de llenguatges de marques. Indica 3 exemples de cada tipus indicant el seu ús
+principal.
+
+4. Entra en openclipart.org, cerca "8 ball", descarrega la imatge més senzilla que veges. Obre-la amb l'editor de text.
+Pots intuir l'esctructura? Mira de canviar el color de la bola des de l'editor (pista: els colors tenen el format: #00
+0000).
+</div>
+
 ## XML
 ### Estructura i sintaxi.
 ### Etiquetes.
