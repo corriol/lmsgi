@@ -192,7 +192,7 @@ Canvia-li la extensió del fitxer per html. Canvia la visualització?
 3. Busca en Internet una classificació de llenguatges de marques. Indica 3 exemples de cada tipus indicant el seu ús
 principal.
 
-4. Entra en openclipart.org, cerca "8 ball", descarrega la imatge més senzilla que veges. Obre-la amb l'editor de text.
+4. Entra en [openclipart.org](https://openclipart.org), cerca "8 ball", descarrega la imatge més senzilla que veges. Obre-la amb l'editor de text.
 Pots intuir l'esctructura? Mira de canviar el color de la bola des de l'editor (pista: els colors tenen el format: #000000).
 </div>
 
