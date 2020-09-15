@@ -45,10 +45,6 @@ Dels avantatges destaquem:
 * La definició de l’estructura de les dades.
 
 ## Característiques comunes.
-Els llenguatges de marques són una manera de codificar un document de text
-de manera que per mitjà de les marques (l’equivalent de les metadades dels
-fitxers binaris) s’hi incorpora informació relativa a com s’ha de representar
-el text, sobre quina estructura tenen les dades que conté, etc.
 Els llenguatges de marques han destacat per una sèrie de característiques que els
 han convertit en els tipus de llenguatges més usats en la informàtica actual per
 emmagatzemar i representar les dades. Entre les característiques més interessants
