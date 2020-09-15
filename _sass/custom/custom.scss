@@ -1,0 +1,75 @@
+.alert { 
+    background-color: #EEE; 
+    padding: 0.75em;  
+    padding-bottom: 0;
+    border-radius: 0.25rem; 
+    border: 1px #DDD solid; 
+    background-size: 1em;
+    margin-bottom: 0.5em;
+}
+.alert h3 {   
+    margin-top: 0.2em;   
+    padding-left: 2em; 
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.alert-info { 
+    color: #0c5460;
+    background-color: #b7ded2;
+    border-color: #bee5eb;
+}
+
+.alert-info h3 {
+    background: url("../../assets/book-reader-solid.svg") no-repeat; 
+}
+
+.alert-activity h3 {
+    background: url("../../assets/laptop-code-solid.svg") no-repeat; 
+}
+
+.alert-activity { 
+    color: #333;
+    background-color: #f6a6b2 !important;
+    border-color: #f8c8d4;
+}
+
+.alert-warning h3 {
+    background: url("../../assets/exclamation-triangle-solid.svg") no-repeat; 
+}
+.alert-question { 
+    color: #0c5460;
+    background-color: #ffecb8;
+    border-color: #bee5eb;
+}
+
+// Autonumbering. Source: https://2ality.com/2012/01/numbering-headingshtml.html
+
+body {
+    counter-reset: h2counter;
+}
+h1 {
+    counter-reset: h2counter;
+}
+
+h2 { counter-reset:  h3counter;}
+h2:before {
+    content: counter(h2counter) ". ";
+    counter-increment: h2counter;
+    counter-reset: h3counter;
+}
+h2.nocount:before {
+    content: none;
+    counter-increment: none;
+}
+
+h3:before {
+    content: counter(h2counter) "." counter(h3counter) ". ";
+    counter-increment: h3counter;
+}
+h3.nocount:before {
+    content: none;
+    counter-increment: none;
+}
