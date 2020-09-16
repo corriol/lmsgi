@@ -4,6 +4,10 @@ title: 1. Llenguatges de marques
 nav_order: 1
 ---
 # Llenguatge de marques
+{: .no_toc }
+
+1. TOC
+{:toc}
 
 ## Concepte de llenguatge de marques
 Un llenguatge de marcat o llenguatge de marques és una forma de codificar un document que, juntament amb el text, 
@@ -375,9 +379,113 @@ Revisa el següent document XML, detecta els errors i reescriu-lo correctament
 ```
 </div>
 
+
+### Atributs en XML
+
+Els elements d'un document XML poden tenir atributs definits en l'etiqueta d'inici. Un atribut serveix per proporcionar
+ informació extra sobre l'element que el conté.
+
+Donats els següents dades d'un producte:
+
+* Codi: G45
+* Nom: Barret de llana
+* Color: negre
+* Preu: 12.56
+
+La seva representació en un document XML podria ser, per exemple:
+```xml
+<producte cod = "G45">
+   <nom color = "negre" preu = "12.56"> Barret de llana </ nom>
+</ producte>
+```
+En aquest exemple s'han escrit tres atributs: codi, color i preu. Cal observar que, els seus valors ( "G45", 
+"negre" i "12.56") s'han escrit entre cometes dobles ("). Tanmateix, també poden anar entre cometes simples ( ').
+
+Si, per exemple, l'atribut `codi` es volgués representar com un element, es podria escriure:
+
+```xml
+<producte>
+   <codi> G45 </ codi>
+   <nom color = "negre" preu = "12.56"> Barret de llana </ nom>
+</ producte>
+```
+Com es pot apreciar, ara el valor del codi no s'ha escrit entre cometes dobles.
+
+#### Normes de sintaxi
+
+Els noms dels atributs han de complir les mateixes normes de sintaxi que els noms dels elements. A més, tots els
+ atributs d'un element han de ser únics. Per exemple, és incorrecte escriure:
+
+```
+<dades x="3" x="4" i="5" />
+```
+
+No obstant això, sí que és correcte escriure:
+
+```xml
+<dades x="3" X="4" i="5" />
+```
+Els atributs continguts en un element, com en aquest cas x, X i y, han de separar amb espais en blanc, i no és 
+significatiu el seu ordre.
+
+{:.alert .alert-activity }
+<div markdown="1">
+### Ciutats de països
+{: .no_toc .nocount }
+Escriu un document XML que emmagatzeme la següent informació:
+
+#### Ciutats     
+
+| Nom |	País | Continent |
+| --- | ---- | --------- | 
+| Nueva Delhi | India  | Àsia |
+| Lisboa | Portugal | Europa |
+| El Cairo | Egipto | África |
+
+Nota: el continent es respresentarà mitjançant un atribut. 
+
+
+#### Fets històrics
+
+<div markdown="0">
+<table>
+<tr>
+    <th rowspan="2"> Descripció de cada  fet</th><th colspan="3"> Data </th> 
+</tr> 
+<tr>
+    <th>Dia</th><th>Mes</th><th>Any</th>
+ </tr>
+<tr><td>IBM dóna a conèixer el PC. </td><td>  12 </td><td>  8  </td><td> 1981 </td></tr>
+<tr>
+    <td>Es funda Google</td>
+    <td>4</td> <td>  9 </td><td>1998 </td>
+</tr>
+<tr><td>Es funda Facebook.</td><td> 4 </td><td>  2 </td><td> 2004 </td></tr>
+</table>
+</div>
+Nota: la descripció de cada fet cal representar-la mitjançant un atribut, la resta d'informació no. 
+
+</div>
+
 ### Ferramentes d'edició
+Per a editar documents XML és suficient en disposar d'un editor de text pla, com Pluma o GEdit.
 
 ### Elaboració de documents XML ben formats
+
+Es diu que un document XML està ben format (well-formed document) quan no té errors de sintaxi. Això inclou els
+ següents aspectes:
+
+ * Els noms dels elements i els seus atributs han d'estar escrits correctament.
+ * Els valors dels atributs han d'estar escrits entre cometes dobles o simples.
+ * Els atributs d'un element s'han de separar amb espais en blanc.
+ * S'han d'utilitzar referències a entitats on sigui necessari.
+ * Hi ha d'haver un únic element arrel.
+ * Tot element ha de tenir un element pare, excepte l'element arrel.
+ * Tots els elements han de tenir una etiqueta d'obertura i una altra de tancament.
+ * Les etiquetes han d'estar correctament niades.
+ * Les instruccions de procés s'han d'escriure de forma correcta.
+ * La declaració XML ha d'estar en la primera línia escrita correctament.
+ * Les seccions `CDATA` i els comentaris han d'estar correctament escrits.
 
 ### Utilització d'espais de noms en XML
 
