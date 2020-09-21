@@ -430,7 +430,7 @@ significatiu el seu ordre.
 
 {:.alert .alert-activity }
 <div markdown="1">
-### Ciutats de països
+### Creació de documents XML
 {: .no_toc .nocount }
 Escriu un document XML que emmagatzeme la següent informació:
 
