@@ -178,7 +178,7 @@ De vegades s’anomenen llenguatges de marcatge lleugers. Markdown i el llenguat
 
 {:.alert .alert-activity}
 <div markdown="1">
-### Exercicis
+### Activitat 1. Exercicis
 {: .no_toc .nocount } 
 
 1. Compara les diverses possibilitats d'exportació, a l'hora de guardar un document en LibreOffice Writer.
@@ -430,12 +430,13 @@ significatiu el seu ordre.
 
 {:.alert .alert-activity }
 <div markdown="1">
-### Creació de documents XML
+### Activitat 3. Creació de documents XML
 {: .no_toc .nocount }
 Escriu un document XML que emmagatzeme la següent informació:
 
 #### Ciutats     
 {: .no_toc }
+
 | Nom |	País | Continent |
 | --- | ---- | --------- | 
 | Nueva Delhi | India  | Àsia |
@@ -468,39 +469,44 @@ Nota: la descripció de cada fet cal representar-la mitjançant un atribut, la r
 
 </div>
 
-#### Declaració XML
+### Declaració XML
 
 La declaració XML que es pot escriure al principi d’un document XML comença amb els caràcters "<?" i acaba amb "?>". 
 
-##### Versió i codificació 
+#### Versió i codificació 
 
 Un document XML podria contenir la següent declaració XML:
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
+```
+En aquesta declaració XML, està indicant que 1.0 és la versió de XML utilitzada en el document i UTF-8 
+(8-bit _Unicode Transformation Format_, Formato de Transformación Unicode de 8 bits) és la codificació de caràcters 
+empleada.
 
-En aquesta declaració XML, està indicant que 1.0 és la versió de XML utilitzada en el document i UTF-8 (8-bit _Unicode Transformation Format_, Formato de Transformación Unicode de 8 bits) és la codificació de caràcters empleada.
+En un document XML no és obligatori que aparega la declaració XML. Ara bé, si la inclou, ha d'aparèixer en la primera 
+línia del document, i el caràcter "<" ha de ser el primer de dita línia, és dir, abans no poden aparèixer espais en blanc.
 
-En un document XML no és obligatori que aparega la declaració XML. Ara bé, si la inclou, ha d'aparèixer en la primera línia del document, i el caràcter "<" ha de ser el primer de dita línia, és dir, abans no poden aparèixer espais en blanc.
+#### Atribut _standalone_
 
-##### Atribut _standalone_
-
-En una declaració XML, a més de la versió i la codificació dels atributs, també es pot escriure l’atribut autònom, que pot prendre dos valors ("sí" o "no"):
+En una declaració XML, a més de la versió i la codificació dels atributs, també es pot escriure l’atribut `standalone`,
+ que pot prendre dos valors ("yes" o "no"):
 
 ```xml
 <?xml version= "1.0" encoding="UTF-8" standalone="yes"?>
 ```
-Al escribir `standalone="yes"` està indicant que el document és independent d'altres, com per exemple d'una 
-DTD (_Document Type Definition_, Definició de Tipo de Documento) externa. En cas contrari, significarà que el document
- no és independent.
+En escriure `standalone="yes"` s'està indicant que el document és independent d'altres, com per exemple d'una 
+DTD (_Document Type Definition_, Definició de Tipo de Documento) externa (o vorem més endavant). En cas contrari, 
+significarà que el document no és independent.
 
-En un document XML, escriure la declaració XML és opcional. Pero, si s'escriu, l'atribut version és obligatori.
-No obstant, els atributs de codificació i autònoms són opcionals i, per defecte, els seus valors són "UTF-8" i "no", 
+En un document XML, escriure la declaració XML és opcional. Pero, si s'escriu, l'atribut `version` és obligatori.
+No obstant, els atributs `encoding` i `standalone` són opcionals i, per defecte, els seus valors són "UTF-8" i "no", 
 respectivament.
 
-Per una altra part, quan s’escriu l’atribut `coding`, sempre haurà d’aparèixer després de la versió. I, l'atribut
+Per una altra part, quan s’escriu l’atribut `encoding`, sempre haurà d’aparèixer després de la versió. I, l'atribut
 `standalone`, sempre que existisca, haurá d'estar en l'últim lloc.
  
-#### Referència a altres entitats
+### Referència a altres entitats
 
 En XML alguns caràcters que són especials pel seu significat (veure taula) i, per escriure'ls en un document XML, es poden utilitzar
  les referències a entitats mostrades en la següent taula:
@@ -533,7 +539,7 @@ En obrir-lo en Google Chrome es podrà visualitzar:
 Al navegador web, es pot veure que on s'han escrit les referències a entitats en el document XML (per exemple), 
 es mostren els caràcters corresponents (per exemple <).
 
-##### Caràcters problemàtics en XML: menor que (<) i ampersand (&)
+#### Caràcters problemàtics en XML: menor que (<) i ampersand (&)
 
 En un document XML, el caràcter "<" és problemàtic perquè indica el començament d'una etiqueta. Per tant, 
 en comptes d'escriure, per exemple:
@@ -603,11 +609,10 @@ En aquests casos, *no és obligatori fer servir les referències a entitats, per
 
 ### Referències de caràcters en XML
 
-
 En un document XML es poden escriure referències de caràcters Unicode amb els símbols & #, seguits de la valor decimal
  o hexadecimal de l'caràcter Unicode que es vulgui representar i, finalment, afegint el caràcter punt i coma ";".
-R
-epresentació de l'caràcter Euro (€) en XML
+
+Representació del caràcter Euro (€) en XML
 
 Donat el document XML "productos.xml":
 
@@ -619,7 +624,7 @@ Donat el document XML "productos.xml":
 </productos>
 ```
 
-A l'visualitzar en un navegador web, es podrà veure el següent:
+En visualitzar en un navegador web, es podrà veure el següent:
 
 ![Visualització de l'arxiu productos.xml a Google Chrome - Exemple d'el tutorial de XML de {Abrirllave.com](assets/productos-xml-chrome.gif)
 
@@ -652,20 +657,58 @@ Donat el fitxer XML "letras.xml":
 </a>
 ```
 En un navegador es veurà:
-![Visualització de l'arxiu letras.xml a Google Chrome - Exemple d'el tutorial de XML de {Abrirllave.com]('assets/letras-xml-chrome.gif')
 
+![Visualització de l'arxiu letras.xml a Google Chrome - Exemple d'el tutorial de XML de {Abrirllave.com](assets/letras-xml-chrome.gif)
 
 En un document XML, no es poden escriure comentaris dins de les etiquetes. Per exemple, no és correcte escriure:
 
-<Dona <! - element buit -> />
-
+```xml
+<element <!-- element buit -> />
+```
 D'altra banda, cal tenir en compte que en els comentaris d'un document XML no està permès utilitzar dos guions seguits:
 
-<!- Dos guions seguits - en un comentari dóna error ->
+```xml
+<!-- dos guions seguits -- en un comentari dóna error ->
+```
+
+De manera que, no és possible niar comentaris en un document XML.
+
+### Seccions CDATA en XML
+
+Un document XML pot contenir seccions CDATA (_Character DATA_) per escriure text que no es desitja que sigui analitzat. 
+Per exemple, això pot ser útil quan es vol escriure text que continga algun dels caràcters problemàtics: menor que `<` 
+o ampersand `&`.
+
+En un document XML, per incloure una secció CDATA, s'escriu començant amb la cadena de caràcters 
+"<! [CDATA [" i acabant amb els caràcters "]]>".
+
+Una secció CDATA pot contenir, per exemple, el codi font d'un programa escrit en llenguatge C:
 
 ```xml
-De manera que, no és possible niar comentaris en un document XML.
+<?xml version="1.0" encoding="UTF-8"?>
+<ejemplo_CDATA>
+<![CDATA[
+#include <stdio.h>
+int main()
+{
+   float nota;
+   printf( "\n   Introduzca nota (real): " );
+   scanf( "%f", &nota );
+   if ( 5 <= nota )
+      printf( "\n   APROBADO" );
+   return 0;
+}
+]]>
+</ejemplo_CDATA>
 ```
+En un navegador web es visualitzarà cosa semblant a:
+
+![Visualització de l'arxiu ejemplo_cdata.xml a Google Chrome - Exemple d'el tutorial de XML de {Abrirllave.com](assets/ejemplo_cdata_chrome.gif)
+
+Dins d'una secció CDATA no es pot escriure la cadena "]]>". En conseqüència, no es poden niar seccions CDATA.
+
+D'altra banda, no està permès escriure espais en blanc o salts de línia en les cadenes d'inici "<! [CDATA [" o fi "]]>" 
+d'una secció CDATA
 
 ### Ferramentes d'edició
 Per a editar documents XML és suficient en disposar d'un editor de text pla, com Pluma o GEdit.
