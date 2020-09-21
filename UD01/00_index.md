@@ -406,7 +406,7 @@ Si, per exemple, l'atribut `codi` es volgués representar com un element, es pod
 ```xml
 <producte>
    <codi> G45 </ codi>
-   <nom color = "negre" preu = "12.56"> Barret de llana </ nom>
+   <nom color="negre" preu="12.56">Barret de llana</ nom>
 </ producte>
 ```
 Com es pot apreciar, ara el valor del codi no s'ha escrit entre cometes dobles.
@@ -435,7 +435,7 @@ significatiu el seu ordre.
 Escriu un document XML que emmagatzeme la següent informació:
 
 #### Ciutats     
-
+{: .no_toc }
 | Nom |	País | Continent |
 | --- | ---- | --------- | 
 | Nueva Delhi | India  | Àsia |
@@ -446,6 +446,7 @@ Nota: el continent es respresentarà mitjançant un atribut.
 
 
 #### Fets històrics
+{: .no_toc }
 
 <div markdown="0">
 <table>
@@ -466,6 +467,205 @@ Nota: el continent es respresentarà mitjançant un atribut.
 Nota: la descripció de cada fet cal representar-la mitjançant un atribut, la resta d'informació no. 
 
 </div>
+
+#### Declaració XML
+
+La declaració XML que es pot escriure al principi d’un document XML comença amb els caràcters "<?" i acaba amb "?>". 
+
+##### Versió i codificació 
+
+Un document XML podria contenir la següent declaració XML:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+En aquesta declaració XML, està indicant que 1.0 és la versió de XML utilitzada en el document i UTF-8 (8-bit _Unicode Transformation Format_, Formato de Transformación Unicode de 8 bits) és la codificació de caràcters empleada.
+
+En un document XML no és obligatori que aparega la declaració XML. Ara bé, si la inclou, ha d'aparèixer en la primera línia del document, i el caràcter "<" ha de ser el primer de dita línia, és dir, abans no poden aparèixer espais en blanc.
+
+##### Atribut _standalone_
+
+En una declaració XML, a més de la versió i la codificació dels atributs, també es pot escriure l’atribut autònom, que pot prendre dos valors ("sí" o "no"):
+
+```xml
+<?xml version= "1.0" encoding="UTF-8" standalone="yes"?>
+```
+Al escribir `standalone="yes"` està indicant que el document és independent d'altres, com per exemple d'una 
+DTD (_Document Type Definition_, Definició de Tipo de Documento) externa. En cas contrari, significarà que el document
+ no és independent.
+
+En un document XML, escriure la declaració XML és opcional. Pero, si s'escriu, l'atribut version és obligatori.
+No obstant, els atributs de codificació i autònoms són opcionals i, per defecte, els seus valors són "UTF-8" i "no", 
+respectivament.
+
+Per una altra part, quan s’escriu l’atribut `coding`, sempre haurà d’aparèixer després de la versió. I, l'atribut
+`standalone`, sempre que existisca, haurá d'estar en l'últim lloc.
+ 
+#### Referència a altres entitats
+
+En XML alguns caràcters que són especials pel seu significat (veure taula) i, per escriure'ls en un document XML, es poden utilitzar
+ les referències a entitats mostrades en la següent taula:
+
+| Carácter |	Entidad |	Referencia a entidad
+| -- | -- | :--: |
+| < (menor que)	| lt (_less than_) |	`&lt;`
+| > (mayor que)	| gt (_greater than_)	| `&gt;`
+| " (comilla doble)	| quot (_quotation mark_) | `&quot;`
+| ' (comilla simple) | apos (_apostrophe_) | `&apos;`
+| & (ampersand) |	amp (_ampersand_) |	`&amp;`
+
+Donat l'arxiu "entidades.xml":
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<entidades>
+   <menor_que>&lt;</menor_que>
+   <mayor_que>&gt;</mayor_que>
+   <comilla_doble>&quot;</comilla_doble>
+   <comilla_simple>&apos;</comilla_simple>
+   <ampersand>&amp;</ampersand>
+</entidades>
+```
+
+En obrir-lo en Google Chrome es podrà visualitzar:
+![Visualització de l'arxiu entidades.xml a Google Chrome - Exemple d'el tutorial de XML de Abrirllave.com](assets/entidades-xml-chrome.gif)
+
+
+Al navegador web, es pot veure que on s'han escrit les referències a entitats en el document XML (per exemple), 
+es mostren els caràcters corresponents (per exemple <).
+
+##### Caràcters problemàtics en XML: menor que (<) i ampersand (&)
+
+En un document XML, el caràcter "<" és problemàtic perquè indica el començament d'una etiqueta. Per tant, 
+en comptes d'escriure, per exemple:
+
+```xml
+<condicion>a<b</condicion>
+```
+Caldria utilitzar la referència a entitat escrivint:
+
+```xml
+<condicion>a&lt;b</condicion>
+```
+El caràcter ">" sí que pot utilitzar-se en el text contingut en un element, i no és incorrecte escriure, per exemple:
+
+```xml
+<condicion>a>b</condicion>
+```
+Ara bé, es recomana fer ús de la seva referència a entitat (`&gt;`)
+
+En un document XML, el caràcter _ampersand_ també és problemàtic, ja que s'utilitza per indicar el començament d'una 
+referència a entitat. Per exemple, no és correcte escriure:
+```xml
+<condicion>a==1 && b==2</condicion>
+```
+En el seu lloc s'ha d'escriure el següent:
+```xml
+<condicion>a==1 &amp;&amp; b==2</condicion>
+```
+
+#### Ús de la cometa doble ( ") i de la cometa simple ( ') en atributs
+
+Si el valor d'un atribut s'escriu entre cometes dobles ( "), aquest valor no podrà contenir aquest caràcter. 
+Per exemple, no és correcte escriure:
+
+```
+<dato caracter="comilla doble(")"/>
+```
+
+Per a això, cal utilitzar la referència a entitat com es mostra a continuació:
+
+```xml
+<dato caracter="comilla doble(&quot;)"/>
+```
+
+De la mateixa manera passa amb la cometa simple ( '), sent incorrecte escriure, per exemple:
+
+```
+<dato caracter='comilla simple(')'/>
+```
+
+Pel que, en aquest cas, caldria usar com es mostra tot seguit:
+
+```xml
+<dato caracter='comilla simple(&apos;)'/>
+```
+
+D'altra banda, els valors d'atributs escrits entre cometes dobles ( ") sí que poden contenir el caràcter cometa simple
+ ( ') i al revés. Per exemple, és correcte escriure:
+
+```xml
+<dato caracter="comilla simple(')"/>
+<dato caracter='comilla doble(")'/>
+```
+
+En aquests casos, *no és obligatori fer servir les referències a entitats, però sí recomanable*.
+
+
+### Referències de caràcters en XML
+
+
+En un document XML es poden escriure referències de caràcters Unicode amb els símbols & #, seguits de la valor decimal
+ o hexadecimal de l'caràcter Unicode que es vulgui representar i, finalment, afegint el caràcter punt i coma ";".
+R
+epresentació de l'caràcter Euro (€) en XML
+
+Donat el document XML "productos.xml":
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+   <nombre precio="12.56&#8364;">Gorro de lana</nombre>
+   <nombre precio="16.99&#x20AC;">Gorro polar</nombre>
+</productos>
+```
+
+A l'visualitzar en un navegador web, es podrà veure el següent:
+
+![Visualització de l'arxiu productos.xml a Google Chrome - Exemple d'el tutorial de XML de {Abrirllave.com](assets/productos-xml-chrome.gif)
+
+Cal observar que, en aquest cas, per representar el símbol de l'Euro (€), la primera vegada s'ha utilitzat el seu valor 
+decimal (`&#8364`) en Unicode i, la segona vegada, el seu valor hexadecimal (`&#x20AC`).
+
+### Comentaris en XML
+
+
+Per escriure comentaris en un document XML, aquests s'han d'escriure entre els caràcters "<!-" i "->". Per exemple:
+
+```xml
+<!- Això és un comentari escrit en un document XML ->
+```
+Donat el fitxer XML "letras.xml":
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ejemplo uso de comentarios.-->
+<a>
+   <b>
+      <c cantidad="4">cccc</c>
+      <d cantidad="2">dd</d>
+   </b>
+   <e>
+      <f cantidad="8">ffffffff</f>
+      <!--g puede aparecer varias veces.-->
+      <g cantidad="5">ggggg</g>
+      <g cantidad="2">gg</g>
+   </e>
+</a>
+```
+En un navegador es veurà:
+![Visualització de l'arxiu letras.xml a Google Chrome - Exemple d'el tutorial de XML de {Abrirllave.com]('assets/letras-xml-chrome.gif')
+
+
+En un document XML, no es poden escriure comentaris dins de les etiquetes. Per exemple, no és correcte escriure:
+
+<Dona <! - element buit -> />
+
+D'altra banda, cal tenir en compte que en els comentaris d'un document XML no està permès utilitzar dos guions seguits:
+
+<!- Dos guions seguits - en un comentari dóna error ->
+
+```xml
+De manera que, no és possible niar comentaris en un document XML.
+```
 
 ### Ferramentes d'edició
 Per a editar documents XML és suficient en disposar d'un editor de text pla, com Pluma o GEdit.
