@@ -17,6 +17,23 @@ XML (_eXtensible Markup Language_, Llenguatge de Marcat extensible) és un lleng
 desenvolupat per W3C (World Wide Web Consortium) que està basat en SGML (_Standard
 Generalized Markup Language_, Llenguatge de Marcat Generalitzat Estàndard).
 
+{:.alert .alert-info}
+<div markdown="1">
+
+### El _World Web Consortium_  
+{:.no_toc .nocount }
+
+El _World Wide Web Consortium_ (W3C) és la principal organització internacional d’estàndards per a la _World Wide Web_.
+ Fundat el 1994 i actualment dirigit per Tim Berners-Lee, el consorci està format per organitzacions membres que
+  mantenen personal a temps complet treballant junts en el desenvolupament d’estàndards per a la _World Wide Web_. 
+  El W3C també es dedica a l'educació i divulgació, desenvolupa programari i serveix de fòrum obert per a la 
+  discussió sobre la web.
+  
+  [Especificació de XML 1.0](https://www.w3.org/TR/xml/)
+
+</div>
+
+
 XML és un llenguatge utilitzat per a l'emmagatzematge i intercanvi de dades estructurades entre diferents plataformes.
 
 XML és un metallenguatge, és a dir, pot ser emprat per a definir altres llenguatges, anomenats *dialectes XML*.
@@ -44,6 +61,7 @@ La sintaxi utilitzada en l'exemple és la bàsica per escriure un element en XML
 ```
 Cal observar que, entre l'etiqueta d'inici (`<nom>`) i l'etiqueta de fi (`</ nom>`) s'ha escrit la dada (`valor`) que es 
 vol emmagatzemar. En aquest cas `Elsa`. 
+
 
 ### Elements buits
 
@@ -223,6 +241,18 @@ Si, per exemple, l'atribut `codi` es volgués representar com un element, es pod
 </ producte>
 ```
 Com es pot apreciar, ara el valor del codi no s'ha escrit entre cometes dobles.
+
+{:.alert .alert-info }
+<div markdown="1">
+### Elements i atributs
+{:.no_toc .nocount }
+
+Un element és un component lògic d’un document XML. Els elements solen tenir entitat pròpia. El contingut d’un element 
+és tot  el que es troba entre les etiquetes d’obertura i tancament, inclús si contenen altres elements (fills).
+
+Per contra, els atributs solen representar propietats o característiques dels elements.
+</div>
+
 
 ### Normes de sintaxi
 
@@ -563,17 +593,15 @@ s'imparteix.
 
 </div>
 
-
-
-
 ### Utilització d'espais de noms en XML
 
-## Bibliografia i crèdits
+## Bibliografia, webgrafia i crèdits
 
 * Wikipedia contributors. (2020, September 13). Markup language. _In Wikipedia, The Free Encyclopedia._ 
 Retrieved 15:51, September 15, 2020, from 
 [https://en.wikipedia.org/w/index.php?title=Markup_language&oldid=978142210](https://en.wikipedia.org/w/index.php?title=Markup_language&oldid=978142210)
 * Carlos Pes. (Febrer de 2017). _Lenguajes de Marcas y Sistemas de Gestión de Información (LMSGI)_  disponible en 
 [Tutorial de LMSGI](http://www.abrirllave.com/lmsgi/) 
-
+* Bartolomé Sintés Marco. (Juny de 2020). _XML: Lenguaje de marcas extensible_, disponible 
+en [https://www.mclibre.org/consultar/xml/](https://www.mclibre.org/consultar/xml/)
 
