@@ -3,7 +3,7 @@ layout: default
 title: 2. XML 
 parent: 1. Llenguatges de marques
 nav_order: 1
-has_children: true
+has_children: false
 ---
 # XML
 {: .no_toc }
@@ -593,7 +593,151 @@ s'imparteix.
 
 </div>
 
-### Utilització d'espais de noms en XML
+## Utilització d'espais de noms en XML
+Els espais de noms XML són un mecanisme per assegurar que els elements i els atributs d'un document XML tinguen noms
+ únics. Estan definits en una recomanació del W3C. El problema que resolen és l'ambigüitat que sorgeix quan un document
+  XML conté noms d'elements o d'atributs provinents de diversos vocabularis i en resulten diversos elements o atributs
+   homònims (amb el mateix nom): si a cada vocabulari se li dóna un espai de noms diferent, es resol l'ambigüitat. 
+   
+ Per exemple:
+ 
+ ```xml
+ <carta>
+    <palo>Corazones</palo>
+    <numero>7</numero>
+ </carta>
+``` 
+
+```xml
+ <carta>
+    <carnes>
+       <filete_de_ternera precio="12.95"/>
+       <solomillo_a_la_pimienta precio="13.60"/>
+    </carnes>
+    <pescados>
+       <lenguado_al_horno precio="16.20"/>
+       <merluza_en_salsa_verde precio="15.85"/>
+    </pescados>
+ </carta>
+```
+
+De forma que, si se inclouen els elements `<carta>` en un document XML, s'origina un conflicte de noms. Per a resoldre'l,
+ es poden utilitzar espais de noms (XML Namespaces). Per exemple, escrivint:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<e1:ejemplo xmlns:e1="http://www.abrirllave.com/ejemplo1"
+   xmlns:e2="http://www.abrirllave.com/ejemplo2">
+  
+   <e1:carta>
+      <e1:palo>Corazones</e1:palo>
+      <e1:numero>7</e1:numero>
+   </e1:carta>
+  
+   <e2:carta>
+      <e2:carnes>
+         <e2:filete_de_ternera precio="12.95"/>
+         <e2:solomillo_a_la_pimienta precio="13.60"/>
+      </e2:carnes>
+      <e2:pescados>
+         <e2:lenguado_al_horno precio="16.20"/>
+         <e2:merluza_en_salsa_verde precio="15.85"/>
+      </e2:pescados>
+   </e2:carta> 
+</e1:ejemplo>
+```
+
+Per a definir un espai de noms s'utilitza la següent sintaxí:
+
+```
+xmlns:prefijo="URI"
+```
+
+En l'exemple, observa que, `xmlns` és un atribut que s'ha utilitzat en l'etiqueta d'inici de l'element `<ejemplo>` i, 
+en aquest cas, s'han definit dos espais de noms que fan referència a los siguientes URI (_Uniform Resource Identifier_, 
+Identificador Uniforme de Recurs):
+
+* http://www.abrirllave.com/ejemplo1
+* http://www.abrirllave.com/ejemplo2
+
+Los prefixes definits són e1 i e2, respectivament. S'han afegit els prefixes a les etiquetes que apareixen en el 
+document: `<e1:carta>`, `<e2:carta>`, `<e1:palo>`, etc.
+
+### Definició d'un espai de noms per defecte
+
+D'altra banda, es pot definir un espai de noms per defecte mitjançant la següent sintaxi:
+
+```
+xmlns = "URI"
+```
+
+D'aquesta manera, tant l'element on s'ha definit l'espai de noms, com tots els seus successors (fills, fills de fills, 
+etc.), han de pertànyer a aquest espai de noms. Per exemple:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejemplo xmlns="http://www.abrirllave.com/ejemplo1">
+  
+   <carta>
+      <palo>Corazones</palo>
+      <numero>7</numero>
+   </carta>
+    
+</ejemplo>
+```
+En el següent exemple, inicialment es defineix un espai de noms per defecte per a l'element `<ejemplo>` i els continguts
+ en ell. Ara bé, posteriorment, es defineix un segon espai de noms, que per defecte afecta el segon element <carta> 
+ que apareix en el document i als seus successors: `<carnses>`, `<pescados>`, `<filete_de_ternera>` ...
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejemplo xmlns="http://www.abrirllave.com/ejemplo1">
+  
+   <carta>
+      <palo>Corazones</palo>
+      <numero>7</numero>
+   </carta>
+
+   <carta xmlns="http://www.abrirllave.com/ejemplo2">
+      <carnes>
+         <filete_de_ternera precio="12.95"/>
+         <solomillo_a_la_pimienta precio="13.60"/>
+      </carnes>
+      <pescados>
+         <lenguado_al_horno precio="16.20"/>
+         <merluza_en_salsa_verde precio="15.85"/>
+      </pescados>
+   </carta>
+
+</ejemplo>
+```
+
+En un document XML, per indicar que determinats elements -o tots- no pertanyen a cap espai de noms, s'escriu l'atribut 
+`xmlns` buit, és a dir, `xmlns = ""`.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejemplo xmlns="http://www.abrirllave.com/ejemplo1">
+  
+   <carta>
+      <palo>Corazones</palo>
+      <numero>7</numero>
+   </carta>
+
+   <carta xmlns="http://www.abrirllave.com/ejemplo2">
+      <carnes>
+         <filete_de_ternera precio="12.95"/>
+         <solomillo_a_la_pimienta precio="13.60"/>
+      </carnes>
+      <pescados xmlns="">
+         <lenguado_al_horno precio="16.20"/>
+         <merluza_en_salsa_verde precio="15.85"/>
+      </pescados>
+   </carta>
+
+</ejemplo>
+```
+En aquest cas, l'element <peixos> i els seus fills, no pertanyen a cap espai de noms.
 
 ## Bibliografia, webgrafia i crèdits
 
