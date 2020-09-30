@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 2. Utilització de llenguatges de marques en entorns web 
-nav_order: 1
+nav_order: 2
 has_children: false
 ---
 # Utilització de llenguatges de marques en entorns web
@@ -157,20 +157,22 @@ En HTML 5.0 la declaració de tipus es simplifica sent:
 
 #### Esquelet bàsic
 
-Per tant, si escollim fer servir _HTML 4.01 strict_, l’esquelet bàsic d’un document XHTML serà com aquest:
+Per tant, si escollim fer servir _XHTML 1.1_, l’esquelet bàsic d’un document XHTML serà com aquest:
 
 ```html
 <?xml version="1.0" encoding="UTF-8"?>
-  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-                        "http://www.w3.org/TR/html4/strict.dtd">
-  <html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
          <title>Títol</title>
       </head>
       <body>
-         ... 
+        
       </body>
   </html>
+
 ```
 ### Títols
 
@@ -297,6 +299,11 @@ Per tant, es pot fer que aparega una imatge en qualsevol document HTML definint 
 Converteix el següent document en pdf en un document XHTML 1.1. 
 
 [Joan Miró, article de la Viquipèdia](assets/Joan_Miro.pdf)
+
+[Joan Miró, article de la Viquipèdia, text](assets/joan-miro.txt)
+
+Com que l'objectiu és utilitzar el validador de XHMTL caldrà que empre l'esquelet d'un document XHMTL 1.1 que trobareu
+al text. 
 
 </div>
 
