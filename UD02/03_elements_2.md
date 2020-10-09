@@ -81,12 +81,24 @@ Tots els navegadors per defecte mostren els enllaços de manera diferent del tex
 ### Activitat 3. Taula de continguts
 {: .nocount .no_toc }
 
-Mitjançant enllaços interns i una llista desordenada crea un taula de continguts baix del títol que et porte 
-directament als encapçalats de nivell 2.
+Mitjançant enllaços dins de la mateixa pàgina i una llista desordenada crea un taula de continguts baix del títol 
+que et porte directament als encapçalats de nivell 2.
 
 </div>
    
+{: .alert .alert-activity}
+<div markdown="1">
 
+### Activitat 4. Enllaços interns
+{: .nocount .no_toc }
+
+Separa els continguts del document principal en diverses pàgines segons l'esquema següent  
+![Esquema](assets/esquema_web.png)
+
+L'índex contindrà enllaços a la resta de pàgines, aquestes sols un enllaç a l'índex.
+
+</div>
+   
 
 ## Webgrafia i recursos
 1. [Utilització dels llenguatges de marques en entorns web](https://ioc.xtec.cat/materials/FP/Recursos/fp_asix_m04_/web/fp_asix_m04_htmlindex/WebContent/u2/a1/continguts.html)
