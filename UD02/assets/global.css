@@ -1,0 +1,77 @@
+
+
+.color-primary-0 { color: #625739 }	/* Main Primary color */
+.color-primary-1 { color: #97834F }
+.color-primary-2 { color: #7C6D46 }
+.color-primary-3 { color: #554A2F }
+.color-primary-4 { color: #483E26 }
+
+.color-complement-0 { color: #2B2E44 }	/* Main Complement color */
+.color-complement-1 { color: #3D4268 }
+.color-complement-2 { color: #353955 }
+.color-complement-3 { color: #24263B }
+.color-complement-4 { color: #1D2031 }
+
+
+body { margin: 0; padding: 0}
+div img {
+    width: 80%;
+    height: auto;
+}
+
+.figure {
+    text-align: center;
+}
+
+.header {
+    background-color: #1D2031;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 6px;
+    font-size: 24px;
+    text-align: left;   
+    text-transform: uppercase;   
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header a {
+    color: #97834F;    
+    text-decoration: none;;
+}
+
+.footer {
+    background-color: #97834F;
+    color: #1D2031;
+    padding: 10px;
+    text-align: center;
+}
+
+.aside {
+    float: left;
+    width: 25%;    
+    padding: 10px;
+}
+
+.aside ul {
+    list-style: none;
+    border: 1px solid #554A2F;
+    border-bottom: none;  
+    list-style: none;
+    margin: 0;
+    padding: 0;  
+}
+
+.aside li {
+    background: #B9A56F;
+    border-bottom: 1px solid #554A2F;
+    border-top: 1px solid #7C6D46;
+}
+
+.aside li a {
+    color: #1D2031;
+    display: block;
+    padding: .2em 0 .2em .5em;
+    text-decoration: none;
+}
