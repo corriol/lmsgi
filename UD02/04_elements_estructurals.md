@@ -56,6 +56,19 @@ A més, inclou en el head del document el següent codi:
 ```html
 <link rel="stylesheet" href="estils/global.css" />
 ```
-</div>
-   
+</div>   
 
+{: .alert .alert-activity }
+<div markdown="1">
+
+
+### Activitat 6. Organitzar el contingut (II)
+{: .nocount .no_toc }
+
+Aplica els canvis realitzats en l'activitat anterior a la resta de documents. 
+
+Caldrà que copies els _divs_ amb classes "header", "footer" i "aside". El que té la classe "main" contindrà el contigut
+actual de la pàgina.    
+
+Recorda que has de validar les pàgines abans de fer l'entrega.
+</div>
