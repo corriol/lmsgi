@@ -49,6 +49,13 @@ Modifica la pàgina `index.(x)html` de forma que tinga els següents elements:
 3. Un `div` amb la classe ”aside” que contindrà el menú.
 4. Un `div` amb la classe ”main” que contindrà el contingut principal.
 
+En acabar, descarrega't el full d'estils [global.css](assets/global.css) en la carpeta `estils` d'on tingues el lloc web. 
+
+A més, inclou en el head del document el següent codi:
+
+```html
+<link rel="stylesheet" href="estils/global.css" />
+```
 </div>
    
 
