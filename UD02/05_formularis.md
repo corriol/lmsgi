@@ -1,11 +1,11 @@
 ---
 layout: default
 parent: 2. Utilització de llenguatges de marques en entorns web 
-title:  4. Elements estructurals
-nav_order: 4
+title:  5. Formularis
+nav_order: 5
 has_children: false
 ---
-# Elements estructurals 
+# Formularis 
 {: .no_toc }
 
 1. TOC
@@ -13,62 +13,107 @@ has_children: false
 
 ## Introducció
 
-La estructura del cos (el codi entre les etiquetes <body>) generarà la part
-visible del document. Aquest és el codi que produirà la nostra pàgina web.
-HTML sempre va oferir diferents formes de construir i organitzar la informació
-dins del cos d’un document. 
+Els formularis HTML s'utilitzen per a enviar dades a un servidor. Un formulari HTML pot contenir elements d'entrada 
+com camps de text, caselles de selecció, botons, etc.
 
-Primerament va ser l'element `<table>`, el que es va emprar per a organitzar el contingut de les pàgines.
- Després va ser l'element <div> el que fins l'arribada d'HTML 5 va començar a dominar l’escena. El problema de l'element
- `<div>` és que no dona cap informació relativa al tipus de contingut que conté, en altres paraules, no té càrrega 
- semàntica. Per als usuaris no és important però sí ho és per als robots de búsqueda i per als navegadors.   
+Per crear un formulari HTML utilitzem l'etiqueta `<form>` i dins del `<form>`  introduirem els camps que ens 
+interessen: `<input>`, `<select>`, etc.
 
-Després analitzarem els canvis que aporta HTML5 en aquesta qüestió però de moment treballarem 
-en 'divs' per a organitzar el contingut.
+Per exemple, el formulari senzill:
 
-A continuació veurem algun exemples d'organització:
+![Formulari bàsic](assets/exemple-de-formulari-basic.png)
 
-
-![Organització](assets/estructura-web.png)
-
-
-![Organització 2](assets/estructura-web-2.png)
-
-![Organització 3](assets/estructura-web-3.png)
-
-{: .alert .alert-activity }
-<div markdown="1">
-
-### Activitat 5. Organitzar el contingut
-{: .nocount .no_toc }
-
-Modifica la pàgina `index.(x)html` de forma que tinga els següents elements:
-
-1. Un `div` amb l'atribut class=”header” que contindrà en un h1 el text "Joan Miró" que serà un enllaç a index.(x)html.
-2. Un `div` amb la classe ”footer” amb el text &copy; [El teu nom] 2020.
-3. Un `div` amb la classe ”aside” que contindrà el menú.
-4. Un `div` amb la classe ”main” que contindrà el contingut principal.
-
-En acabar, descarrega't el full d'estils [global.css](assets/global.css) en la carpeta `estils` d'on tingues el lloc web. 
-
-A més, inclou en el head del document el següent codi:
+Seria:
 
 ```html
-<link rel="stylesheet" href="estils/global.css" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Exemple de formulari bàsic</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <h1>Formulari bàsic</h1>
+    <form action="processar-dades.php">
+        <div>
+            <label>Nom:</label>
+            <input type="text" />
+        </div>
+        <div>
+            <label>Edat:</label>
+            <input type="text" />
+        </div>
+        <div><input type="submit" value="Enviar datos" />
+        </div>
+    </form>
+</body>
+</html>
 ```
-</div>   
+
+Com es pot observar, les etiquetes `<form>` i `</ form>` delimiten el formulari, el qual conté en aquest exemple tres 
+elements "input" perquè l'usuari puga:
+
+1. Introduir el seu nom (dada de tipus text, `type="text"`).
+2. Introduir la seva edat (dada de tipus nombre, `type="text"`).
+3. Enviar aquestes dades, `type="submit"`.
+
+A més, els elements `label` contenen el text associat a cada control de formulari.
+
+D'altra banda, vegeu que a l'atribut `value` se li ha assignat el text que es mostra en el botó d'enviament, 
+"Enviar dades".
+
+### atribut `action`
+
+Quan algú fa clic al botó d'enviament de dades d'un formulari, habitualment aquests són enviats a una altra pàgina web
+ per al seu processament en un servidor. Per indicar l'URL d'aquesta pàgina, en l'element "form" s'utilitza l'atribut 
+ `action`.
+
+L'atribut `action` és obligatori i en l'exemple anterior les dades s'enviarien a la pàgina "processar-dades.php".
+
+
+{: .alert .alert-info }
+<div markdown="1">
+
+### Llenguatges d'entorn servidor
+{: .nocount .no_toc }
+Nota: per processar les dades en un servidor s'utilitzen llenguatges que poden executar-se en un servidor, 
+com ara: ASP, PHP, python, etc.
+</div>
+
+### atribut `method`
+
+L'atribut method de l'element "form" permet especificar el mètode HTTP que es va a utilitzar per enviar les dades 
+d'un formulari. Podent ser el mètode GET o el mètode POST.
+
+El mètode GET se sol utilitzar per enviar informació (dades) que no sigui sensible (contrasenyes, telèfons, adreces de
+ correu electrònic ...). Mentre que el mètode POST és l'habitual en els formularis. 
+
+## Controls de formulari
+
+Els controls de formulari són els diferents elements que permeten la introducció de les dades que després s'enviaran
+al servidor. Aquests controls han de tenir obligatòriament l'atribut `name` que serà l'atribut al que s'associaran les 
+dades introduides en cada element. 
+ 
+En la següent pàgina teniu una informació més detallada 
+[Introducción a XHTML, 8. Formularios](https://uniwebsidad.com/libros/xhtml/capitulo-8)
+
 
 {: .alert .alert-activity }
 <div markdown="1">
 
-
-### Activitat 6. Organitzar el contingut (II)
+### Activitat 7. Formulari de contacte bàsic
 {: .nocount .no_toc }
 
-Aplica els canvis realitzats en l'activitat anterior a la resta de documents. 
+Crea en el lloc web sobre Joan Miró el següent formulari 
+![Formulari](assets/formulari-de-contacte.png)
 
-Caldrà que copies els _divs_ amb classes "header", "footer" i "aside". El que té la classe "main" contindrà el contigut
-actual de la pàgina.    
+Assegura't que els tots elements on s'han d'introduir dades tinguen atribut `name`.
 
-Recorda que has de validar les pàgines abans de fer l'entrega.
+Utilitza l'element `label` de la forma que s'indica en l'apartat 8.3 de la Introducció a XHTML de Uniwebsidad
+
+Valida la pàgina abans de penjar-la a Aules.
 </div>
