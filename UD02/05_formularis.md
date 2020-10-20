@@ -117,3 +117,19 @@ Utilitza l'element `label` de la forma que s'indica en l'apartat 8.3 de la Intro
 
 Valida la pàgina abans de penjar-la a Aules.
 </div>
+
+{: .alert .alert-activity }
+<div markdown="1">
+
+### Activitat 8. Formulari de contacte avançant
+{: .nocount .no_toc }
+
+1. Modifica el formulari perquè s'assemble al següent. La informació la trobareu en la _Introducció a XHTML_ de Uniwebsidad.
+![Formulari](assets/formulari-de-contacte-2.png)
+
+2. Assegura't que els tots elements on s'han d'introduir dades tinguen atribut `name`.
+
+3. Utilitza l'element `label` de la forma que s'indica en l'apartat 8.3 de la Introducció a XHTML de Uniwebsidad
+
+Valida la pàgina abans de penjar-la a Aules.
+</div>
