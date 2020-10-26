@@ -124,7 +124,7 @@ Valida la pàgina abans de penjar-la a Aules.
 ### Activitat 8. Formulari de contacte avançant
 {: .nocount .no_toc }
 
-1. Modifica el formulari perquè s'assemble al següent. La informació la trobareu en la _Introducció a XHTML_ de Uniwebsidad.
+1. Modifica el formulari perquè s'assemble al següent. La informació la trobareu en la _Introducció a XHTML_ad de Uniwebsidad.
 ![Formulari](assets/formulari-de-contacte-2.png)
 
 2. Assegura't que els tots elements on s'han d'introduir dades tinguen atribut `name`.
