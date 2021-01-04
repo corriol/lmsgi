@@ -1,75 +1,202 @@
-.alert { 
-    background-color: #EEE; 
-    padding: 0.75em;  
-    padding-bottom: 0;
-    border-radius: 0.25rem; 
-    border: 1px #DDD solid; 
-    background-size: 1em;
-    margin-bottom: 0.5em;
+
+body {
+  color: #001122 !important;
 }
-.alert h3 {   
-    margin-top: 0.2em;   
-    padding-left: 2em; 
-    font-size: 1.2em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+.alert {
+  background-color: #EEE;
+  padding: 0 .75em;
+  border-radius: 0.25rem;
+  border: 1px #DDD solid;
+  background-size: 1em;
+  margin: 0;
+  margin-bottom: 1em;
+
+  background-repeat:  no-repeat;
+  background-position-y: center;
+  background-position-x: 10px;
+  background-blend-mode: soft-light;
+
+  padding-left: 40px;
+
 }
 
-.alert-info { 
-    color: #0c5460;
-    background-color: #ddeedd;
-    border-color: #bee5eb;
+.main-content .alert h3 {  
+  margin-top: 1.5rem;
+  font-weight: 500;  
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  
 }
 
-.alert-info h3 {
-    background: url("../../assets/book-reader-solid.svg") no-repeat; 
+.alert h4 {
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
-.alert-activity h3 {
-    background: url("../../assets/laptop-code-solid.svg") no-repeat; 
+
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  background-image: url("../../assets/info-circle-solid.svg");
+  border-color: #bee5eb;
+
+
 }
 
-.alert-activity { 
-    color: #333;
-    background-color: #f9e9e5 !important;
-    border-color: #f8c8d4;
+.alert-activity {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  background-image: url("../../assets/laptop-code-solid.svg");
+
 }
 
-.alert-warning h3 {
-    background: url("../../assets/exclamation-triangle-solid.svg") no-repeat; 
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  background-image: url("../../assets/exclamation-triangle-solid.svg");
 }
-.alert-question { 
-    color: #0c5460;
-    background-color: #ffecb8;
-    border-color: #bee5eb;
+
+
+.alert-question {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  background-image: url("../../assets/question-circle-solid.svg");
+
+}
+
+
+html { font-size: 18px !important;
+ }
+
+#main-content {
+  font-family: Georgia, Serif;
 }
 
 // Autonumbering. Source: https://2ality.com/2012/01/numbering-headingshtml.html
 
-body {
-    counter-reset: h2counter;
-}
-h1 {
-    counter-reset: h2counter;
+/* body {
+  counter-reset: h2counter;
 }
 
-h2 { counter-reset:  h3counter;}
-h2:before {
-    content: counter(h2counter) ". ";
-    counter-increment: h2counter;
-    counter-reset: h3counter;
+h1 {
+  counter-reset: h2counter;
 }
+
+h2 {
+  counter-reset: h3counter;
+}
+
+h2:before {
+  content: counter(h2counter) ". ";
+  counter-increment: h2counter;
+  counter-reset: h3counter;
+}
+
 h2.nocount:before {
-    content: none;
-    counter-increment: none;
+  content: none;
+  counter-increment: none;
 }
 
 h3:before {
-    content: counter(h2counter) "." counter(h3counter) ". ";
-    counter-increment: h3counter;
+  content: counter(h2counter) "." counter(h3counter) ". ";
+  counter-increment: h3counter;
 }
+
 h3.nocount:before {
-    content: none;
-    counter-increment: none;
+  content: none;
+  counter-increment: none;
 }
+*/
+@media print {
+  #markdown-toc {
+    display: none;
+  }
+  #taula-de-continguts {
+    display: none;
+  }
+  h1 {
+    font-size: 10px
+  }
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: Arial, sans-serif}
+/*
+.side-bar {
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f6fa;
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.site-header {
+  display: flex;
+  min-height: 60px;
+  align-items: center;
+}
+
+.site-nav, .site-header, .site-footer {
+  width: 100%;
+}
+
+.site-nav {
+  display: none;
+}
+
+#site-button {
+  display: flex !important;
+}
+.site-button {
+  display: flex !important;
+  height: 100%;
+  padding: 1rem;
+  align-items: center;
+}
+
+.site-title {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex-grow: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #27262b;
+  font-size: 18px !important;
+}
+
+.main-header {
+  z-index: 0;
+  display: none;
+  background-color: #f5f6fa;
+}
+
+.main {
+  margin: auto !important;
+
+}
+
+.main-content-wrap {
+
+
+}
+.site-footer {
+  display: none;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #959396;
+  font-size: 11px !important;
+}*/

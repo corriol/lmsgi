@@ -1,6 +1,5 @@
 ---
 layout: default
-title: 1. Llenguatges de marques
 parent: 1. Llenguatges de marques 
 nav_order: 1
 ---
@@ -20,6 +19,7 @@ El llenguatge de marques més estès és l’HTML (HyperText Markup Language, ll
 Alguns exemples:
  
 HTML 4.0
+
  ```html
  <h1>Anatidae</h1>
  <p>
@@ -28,6 +28,7 @@ HTML 4.0
  </p>
  ```
 XML
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
@@ -44,6 +45,7 @@ Inicialment els llenguatges de marques es van enfocar a la generació de documen
 s'ha extès el seu ús envers la definició d'estructures de dades i la compartició d'informació. 
 
 Dels avantatges destaquem:
+
 * La facilitat de creació i lectura.
 * El compliment d’estàndards d’emmagatzematge definits i públics.
 * La incorporació de metadades.
@@ -54,6 +56,7 @@ Els llenguatges de marques han destacat per una sèrie de característiques que 
 han convertit en els tipus de llenguatges més usats en la informàtica actual per
 emmagatzemar i representar les dades. Entre les característiques més interessants
 que ofereixen els llenguatges de marques hi ha:
+
 * Que es basen en el text pla.
 * Que permeten fer servir metadades.
 * Que són fàcils d’interpretar i processar.
@@ -97,10 +100,14 @@ la presentació de les dades. Ja sigui per mitjà d’informació per al disseny
 (marcar negretes, títols, etc.) o de procediments que ha de fer el programari de
 representació. L’exemple més popular d’aquests llenguatges és l’HTML però n’hi
 ha molts més: TeX, Wikitext...
-En aquests casos els documents ens poden servir per determinar de quina manera
-es mostrarà el document a qui el llegeixi.
 
-##### Latex: un llenguatge de marcat procedimental
+En aquests casos els documents ens poden servir per determinar de quina manera
+es mostrarà el document a qui el llija.
+
+#### Latex: un llenguatge de marcat procedimental ####
+
+Per exemple:
+
 ```latex
 \documentclass{article}
 \usepackage{graphicx}
@@ -148,6 +155,7 @@ més important és l’XML però n’hi algun altre que està tenint molt de sup
 per exemple JSON.
 En el document següent tenim un exemple d’un fitxer de marques que dóna
 informació sobre persones:
+
 ```xml
 <alumnes>
     <persona>
@@ -178,17 +186,18 @@ De vegades s’anomenen llenguatges de marcatge lleugers. Markdown i el llenguat
  en són exemples.
 
 {:.alert .alert-activity}
-<div markdown="1">
+<div markdown="1" class="activity">
 ### Activitat 1. Exercicis
 {: .no_toc .nocount } 
 
 1. Compara les diverses possibilitats d'exportació, a l'hora de guardar un document en LibreOffice Writer.
 
 2. Escriu en un fitxer de text pla el següent:
-	```html
-	<h1> encapçalat de nivell 1 </h1>
-	<h3> encapçalat de nivell 3 </h3>
-	```
+
+```html
+<h1> encapçalat de nivell 1 </h1>
+<h3> encapçalat de nivell 3 </h3>
+```
 Obri este fitxer des del navegador. Còm es veu?
 Canvia-li la extensió del fitxer per html. Canvia la visualització?
 

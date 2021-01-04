@@ -1,6 +1,5 @@
 ---
 layout: default
-title: 2. XML 
 parent: 1. Llenguatges de marques
 nav_order: 1
 has_children: false
@@ -18,7 +17,7 @@ desenvolupat per W3C (World Wide Web Consortium) que està basat en SGML (_Stand
 Generalized Markup Language_, Llenguatge de Marcat Generalitzat Estàndard).
 
 {:.alert .alert-info}
-<div markdown="1">
+<div markdown="1" class="info">
 
 ### El _World Web Consortium_  
 {:.no_toc .nocount }
@@ -38,6 +37,7 @@ XML és un llenguatge utilitzat per a l'emmagatzematge i intercanvi de dades est
 
 XML és un metallenguatge, és a dir, pot ser emprat per a definir altres llenguatges, anomenats *dialectes XML*.
  Per exemple, alguns llenguatges basats en XML són:
+
 * GML (_Geography Markup Language_, Llenguatge de Marcat Geogràfic).
 * MathML (_Mathematical Markup Language_, Llenguatge de Marcat Matemàtic).
 * RSS (_Really Simple Syndication_, Sindicació Realment Simple).
@@ -90,15 +90,15 @@ D'altra banda, un element (pare) pot contenir a un altre o altres elements (fill
 
 ```xml
 <persona>
-   <nom> Elsa </ nom>
+   <nom> Elsa </nom>
    <dona />
    <data-de-naixement>
-      <dia> 18 </ dia>
-      <mes> 6 </ mes>
-      <any> 1996 </ any>
-   </ data-de-naixement>
-   <ciutat> Pamplona </ ciutat>
-</ persona>
+      <dia> 18 </dia>
+      <mes> 6 </mes>
+      <any> 1996 </any>
+   </data-de-naixement>
+   <ciutat> Pamplona </ciutat>
+</persona>
 ```
 
 En aquest exemple, l'element "persona" conté quatre elements (fills): "nom", "dona", "data de naixement" i "ciutat". 
@@ -133,12 +133,12 @@ En aquest exemple, l'element "persona" conté els elements "nom" i "ciutat", a m
 En un document XML, tots els noms dels elements són _case sensitive_, és a dir, sensibles a lletres minúscules i 
 majúscules, havent de complir les següents normes:
 
->>Poden contenir lletres minúscules, lletres majúscules, números, punts ".", Guions mitjans "-" i guions baixos "_".
+>Poden contenir lletres minúscules, lletres majúscules, números, punts ".", Guions mitjans "-" i guions baixos "_".
 
->>Així mateix, poden contenir el caràcter dos punts ":". No obstant això, el seu ús es reserva per quan es 
+>Així mateix, poden contenir el caràcter dos punts ":". No obstant això, el seu ús es reserva per quan es 
  defineixin espais de noms.
 
->>El primer caràcter ha de ser una lletra o un guió baix "_".
+>El primer caràcter ha de ser una lletra o un guió baix "_".
 
 D'altra banda, cal tenir en compte que darrere del nom d'una etiqueta es permet escriure un espai en blanc o un salt 
 de línia. Per exemple, sintàcticament és correcte escriure:
@@ -190,7 +190,7 @@ igualment s'aconsella evitar el seu ús; el guió perquè podria confondre amb e
 per exemple a l'escriure color.favorito, podria interpretar-se que favorito és una propietat de l'objecte color.
 
 {:.alert .alert-activity }
-<div markdown="1">
+<div markdown="1" class="activity">
 ### Activitat 2. Errors de sintaxi
 {: .no_toc .nocount } 
 
@@ -243,7 +243,7 @@ Si, per exemple, l'atribut `codi` es volgués representar com un element, es pod
 Com es pot apreciar, ara el valor del codi no s'ha escrit entre cometes dobles.
 
 {:.alert .alert-info }
-<div markdown="1">
+<div markdown="1" class="activity">
 ### Elements i atributs
 {:.no_toc .nocount }
 
@@ -272,7 +272,7 @@ Els atributs continguts en un element, com en aquest cas x, X i y, han de separa
 significatiu el seu ordre.
 
 {:.alert .alert-activity }
-<div markdown="1">
+<div markdown="1" class="activity">
 ### Activitat 3. Creació de documents XML
 {: .no_toc .nocount }
 Escriu un document XML que emmagatzeme la següent informació:
@@ -292,22 +292,8 @@ Nota: el continent es respresentarà mitjançant un atribut.
 ### Fets històrics
 {: .no_toc }
 
-<div markdown="0">
-<table>
-<tr>
-    <th rowspan="2"> Descripció de cada  fet</th><th colspan="3"> Data </th> 
-</tr> 
-<tr>
-    <th>Dia</th><th>Mes</th><th>Any</th>
- </tr>
-<tr><td>IBM dóna a conèixer el PC. </td><td>  12 </td><td>  8  </td><td> 1981 </td></tr>
-<tr>
-    <td>Es funda Google</td>
-    <td>4</td> <td>  9 </td><td>1998 </td>
-</tr>
-<tr><td>Es funda Facebook.</td><td> 4 </td><td>  2 </td><td> 2004 </td></tr>
-</table>
-</div>
+![Fets històrics](assets/01-taula-fets-XML.png)
+
 Nota: la descripció de cada fet cal representar-la mitjançant un atribut, la resta d'informació no. 
 
 </div>
@@ -376,6 +362,7 @@ Donat l'arxiu "entidades.xml":
 ```
 
 En obrir-lo en Google Chrome es podrà visualitzar:
+
 ![Visualització de l'arxiu entidades.xml a Google Chrome - Exemple d'el tutorial de XML de Abrirllave.com](assets/entidades-xml-chrome.gif)
 
 
@@ -573,7 +560,7 @@ Es diu que un document XML està ben format (well-formed document) quan no té e
 
 
 {:.alert .alert-activity}
-<div markdown="1">
+<div markdown="1" class="activity">
 
 
 ### Activitat 4: Els mòduls de DAW
@@ -584,7 +571,7 @@ s'imparteix.
 </div>
 
 {:.alert .alert-activity}
-<div markdown="1">
+<div markdown="1" class="activity">
 
 ### Activitat 5: Documents XML ben format
 {:.no_toc .nocount }
