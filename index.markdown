@@ -4,3 +4,8 @@
 
 layout: home
 ---
+<h1>
+Llenguatge de marques i sistemes de gestió de la informació.
+</h1>
+
+<h2></h2>
