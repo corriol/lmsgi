@@ -271,3 +271,68 @@ en XML.
 Malgrat que és possible fer servir els validadors d’XML, el més normal és fer
 servir programes específics per validar RSS i Atom com el _Feed Validation Service_ de W3C
  ([validator.w3.org/feed](https://validator.w3.org/feed))
+
+ ---
+
+## Solució
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+	<title>Receptari exemplar</title>
+	<description>Blog sobre gastronomia de la Comunitat Valenciana</description>
+  <link>https://receptari-exemple.org</link>
+  <ttl>1800</ttl>
+
+	<item>
+		<title>Arròs al forn</title>
+		<description>La peculiaritat d'aquest arròs, com indica el mateix 
+    nom, és que està cuinat al forn. I, igual que la paella i altres arrossos 
+    valencians, també és un plat d'origen popular, que en aquest cas s'elaborava 
+    a partir de les restes del putxero. És per això que entre els seus ingredients 
+    no falten els cigrons, les costelles de porc i la botifarra. Aquest plat 
+    és especialment típic en comarques com la Costera, on a Xàtiva se celebra
+     des de fa uns quants anys el Concurs Nacional d'Arròs al Forn.
+     </description>
+		<link>https://receptari-exemple.org/2020/12/arros-al-forn.html</link>
+		<pubDate>Sun, 13 Dec 2020 08:00:00 +0000</pubDate>
+		<guid isPermaLink="true">https://receptari-exemple.org/2020/12/arros-al-forn.html</guid>
+	</item>
+```
+
+---
+```xml
+	<item>
+		<title>Paella valenciana</title>
+		<description>La paella és el màxim estendard de la cuina valenciana 
+    i probablement també de l'espanyola, a causa del seu reconeixement 
+    gastronòmic a escala mundial. El seu origen, com el de tots els plats 
+    de la cuina popular, deriva de la conjunció dels aliments que cada família
+     tenia al seu abast, especialment en la zona de l'horta de València, 
+     que es proveïa de verdures fresques. A més, antigament era costum criar 
+     pollastres i conills per a ús familiar, per la qual cosa, si a tot això 
+     unim l'abundància de l'arròs conreat en l'Albufera, el resultat és
+      aquest plat genuïnament valencià que rep el nom del recipient 
+      en el qual es cuina.</description>
+		<link>https://receptari-exemple.org/2020/04/paella-valenciana.html</link>
+		<pubDate>Mon, 06 Apr 2020 13:20:00 +0000</pubDate>
+		<guid isPermaLink="true">https://receptari-exemple.org/2020/04/paella-valenciana.html</guid>
+	</item>
+
+	<item>
+		<title>Olleta</title>
+		<description>L'olleta és el plat més representatiu a la zona de la muntanya 
+    d'Alacant i a l'interior de València. Es tracta d'un putxero suculent, 
+    similar a un potatge caldós però dels més refinats de tot Espanya, i per 
+    això es reconegut a escala nacional. El seu sabor intens i perfumat deriva 
+    de la fragància aromàtica dels embotits i, una vegada desgreixat, aconsegueix
+     un punt sublim.</description>
+		<link>https://receptari-exemple.org/2019/12/olleta.html</link>
+		<pubDate>Sat, 28 Dec 2019 18:20:00 +0000</pubDate>
+		<guid isPermaLink="true">https://receptari-exemple.org/2019/12/olleta.html</guid>
+	</item>
+
+</channel>
+
+</rss>
+```

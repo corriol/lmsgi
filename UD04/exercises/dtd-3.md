@@ -1,0 +1,211 @@
+---
+title: "Exercicis DTD 3"
+listings-no-page-break: true
+---
+
+# Ejercicios DTD (III)
+
+
+## DTD - Ejercicio 3 - Elementos con atributos - Corregir errores en los elementos
+
+Los siguientes documentos no son válidos porque contienen uno o dos errores (los errores no están en la DTD interna). 
+Corrija los errores y compruebe con XML Copy Editor que ya son documentos válidos.
+
+### DTD - Ejercicio 3-1 - Datos personales
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE persona [
+  <!ELEMENT persona EMPTY>
+  <!ATTLIST persona nombre CDATA #IMPLIED>
+]>
+
+<persona dni="03141592E" />
+```
+
+### DTD - Ejercicio 3-2 - Película
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pelicula [
+  <!ELEMENT pelicula EMPTY>
+  <!ATTLIST pelicula titulo CDATA #IMPLIED>
+]>
+
+<pelicula titulo="La diligencia" genero="oeste" />
+```
+
+### DTD - Ejercicio 3-3 - Cuadros
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cuadros [
+  <!ELEMENT cuadros (cuadro*)>
+  <!ELEMENT cuadro EMPTY>
+  <!ATTLIST cuadro titulo ID #REQUIRED>
+  <!ATTLIST cuadro autor CDATA #REQUIRED>
+]>
+
+<cuadros>
+  <cuadro titulo="Adán y Eva" autor="Alberto Durero" />
+  <cuadro autor="Lucas Cranach, el viejo" titulo="Adán y Eva" />
+</cuadros>
+```
+### DTD - Ejercicio 3-4 - Lista de la compra
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listaCompra [
+  <!ELEMENT listaCompra (item*)>
+  <!ELEMENT item EMPTY>
+  <!ATTLIST item nombre CDATA #REQUIRED>
+  <!ATTLIST item cantidad CDATA #REQUIRED>
+]>
+
+<listaCompra>
+  <leche cantidad="12 litros" ></leche>
+  <pan cantidad="3 barras de cuarto" />
+</listaCompra>
+```
+
+### DTD - Ejercicio 3-5 - Jugadores de fútbol
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE futbol [
+  <!ELEMENT futbol (jugador*)>
+  <!ELEMENT jugador EMPTY>
+  <!ATTLIST jugador nombre NMTOKENS #REQUIRED>
+  <!ATTLIST jugador codigo ID #REQUIRED>
+]>
+
+<futbol>
+  <jugador nombre="Alfredo Di Stéfano" codigo="1"/>
+  <jugador nombre="Edson Arantes do Nascimento, Pelé" codigo="2" />
+  <jugador nombre="Diego Armando Maradona" codigo="3" />
+  <jugador nombre="Johan Cruyff" codigo="4" />
+</futbol>
+```
+### DTD - Ejercicio 3-6 - Jugadores y equipos de fútbol
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE futbol [
+  <!ELEMENT futbol ((jugador|equipo)*)>
+  <!ELEMENT jugador EMPTY>
+  <!ATTLIST jugador nombre NMTOKENS #REQUIRED>
+  <!ATTLIST jugador codigo ID #REQUIRED>
+  <!ELEMENT equipo EMPTY>
+  <!ATTLIST equipo nombre CDATA #REQUIRED>
+  <!ATTLIST equipo jugadores IDREFS #IMPLIED>
+]>
+
+<futbol>
+  <jugador nombre="Alfredo Di Stéfano" codigo="ads"/>
+  <jugador nombre="Edison Arantes do Nascimento" codigo="ean" />
+  <jugador nombre="Diego Armando Maradona" codigo="dam" />
+  <jugador nombre="Johan Cruyff" codigo="jc" />
+  <equipo nombre="Società Sportiva Calcio Napoli" jugadores="Maradona" />
+  <equipo nombre="Futbol Club Barcelona" jugadores="Cruyff, Maradona" />
+</futbol>
+```
+
+## DTD - Ejercicio 4 - Elementos con atributos - Corregir errores en la DTD
+
+Los siguientes documentos no son válidos porque contienen errores (los errores están en la DTD interna). Corrija los errores y compruebe con XML Copy Editor que ya son documentos válidos. Casi siempre habrá varias maneras de corregir la DTD, intente elegir la más sencilla.
+
+### DTD - Ejercicio 4-1 - Libro
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro [
+  <!ELEMENT libro EMPTY>
+  <!ATTLIST libro autor NMTOKEN #REQUIRED>
+]>
+
+<libro autor="Mario Vargas LLosa" />
+```
+### DTD - Ejercicio 4-2 - Inventores
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventores [
+  <!ELEMENT inventores>
+  <!ELEMENT inventor EMPTY>
+  <!ATTLIST inventor invento CDATA #REQUIRED>
+  <!ATTLIST inventor nombre ID #REQUIRED>
+]>
+
+<inventores>
+  <inventor nombre="Robert Adler" invento="Mando a distancia" />
+  <inventor nombre="Laszlo Josef Biro" invento="Bolígrafo" />
+  <inventor nombre="Josephine Garis Cochran" invento="Lavaplatos" />
+  <inventor invento="Fuego" />
+</inventores>
+```
+
+### DTD - Ejercicio 4-3 - Cosas por hacer
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cosasPorHacer [
+  <!ELEMENT cosasPorHacer (cosa)>
+  <!ELEMENT cosa EMPTY>
+  <!ATTLIST cosa fecha CDATA #REQUIRED>
+  <!ATTLIST cosa asunto CDATA #REQUIRED>
+  <!ATTLIST cosa fechaLimite CDATA #REQUIRED>
+]>
+
+<cosasPorHacer>
+  <cosa fecha="20 de febrero de 2011" fechaLimite="1 de marzo de 2011">
+  Preparar ejercicios de DTDs</cosa>
+  <cosa fecha="21 de febrero de 2011" fechaLimite="5 de marzo de 2011">
+  Preparar tema XSLT</cosa>
+</cosasPorHacer>
+```
+### DTD - Ejercicio 4-4 - Resoluciones de pantalla
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resoluciones [
+  <!ELEMENT resoluciones EMPTY>
+  <!ATTLIST resoluciones nombre NMTOKEN #REQUIRED>
+  <!ATTLIST resoluciones alto CDATA #REQUIRED>
+  <!ATTLIST resoluciones ancho CDATA #REQUIRED>
+]>
+
+<resoluciones>
+  <resolucion nombre="VGA" alto="480" ancho="640" />
+  <resolucion nombre="XGA" alto="1024" ancho="768" />
+  <resolucion nombre="HD 1080" alto="1920" ancho="1080" />
+</resoluciones>
+```
+### DTD - Ejercicio 4-5 - Álbumes de Mortadelo y Filemón
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE albumesMortadelo [
+  <!ELEMENT albumesMortadelo (album*)>
+  <!ELEMENT album (nombre, fecha)>
+  <!ATTLIST album nombre CDATA #REQUIRED>
+  <!ATTLIST album fecha(1969,1970,1971,1972,1973,1974) #REQUIRED>
+]>
+
+<albumesMortadelo>
+  <album nombre="El sulfato atómico" fecha="1969"/>
+  <album nombre="La caja de diez cerrojos" fecha="1971"/>
+  <album nombre="El otro yo del profesor Bacterio" fecha="1973"/>
+  <album nombre="Los cacharros majaretas" fecha="1974"/>
+</albumesMortadelo>
+```
+## Crèdits i bibliografia 
+
+Aquests exercicis estan extrets del llibre _Lenguajes de Marcas y Sistemas de Gestión de Información_ de Carlos Pes
+
+* [Versió en línia](https://www.abrirllave.com/dtd/que-es-dtd.php)
+* [Versió en PDF](https://www.abrirllave.com/lmsgi/libro.php)
+
+i dels apunts de Barlomé Sintes Marco:
+
+* [https://www.mclibre.org/consultar/xml/lecciones/xml-dtd.html](https://www.mclibre.org/consultar/xml/lecciones/xml-dtd.html)
+
+

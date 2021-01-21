@@ -1,0 +1,377 @@
+---
+title: "Exercicis DTD 1"
+listings-no-page-break: true
+---
+
+# Exercicis DTD 
+
+## DTD - Ejercicio 1 - Elementos sin atributos - Corregir errores en los elementos
+
+Els següents documents XML estan ben formats. No obstant això, no són vàlids. Perquè ho siguen realitzar els canvis necessaris en el document, però sense modificar la DTD interna.
+
+### DTD - Ejercicio 1-1 - Números
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE numeros [
+  <!ELEMENT numeros (#PCDATA)>
+]>
+
+<numeros>
+  <numero>25</numero>
+</numeros>
+```
+### DTD - Ejercicio 1-2 - Letras
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE letras [
+  <!ELEMENT letras (letra)>
+  <!ELEMENT letra (#PCDATA)>
+]>
+
+<letras>
+  <letra>m</letra>
+  <letra>uve doble</letra>
+</letras>
+```
+### DTD - Ejercicio 1-3 - Colores
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE colores [
+  <!ELEMENT colores (color*)>
+  <!ELEMENT color (#PCDATA)>
+]>
+
+<colores>
+  <color>azul marino</color>
+  negro
+  <color>amarillo</color>
+</colores>
+```
+
+### DTD - Ejercicio 1-4 - Flores
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flores [
+  <!ELEMENT flores (flor+)>
+  <!ELEMENT flor (#PCDATA)>
+]>
+
+<flores>
+</flores>
+```
+
+### DTD - Ejercicio 1-5 - Animales
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE animales [
+  <!ELEMENT animales (animal*)>
+  <!ELEMENT animal (#PCDATA)>
+]>
+
+<animales>
+  <perro>Caniche</perro>
+  <gato>Siamés</gato>
+</animales>
+```
+### DTD - Ejercicio 1-6 - Escritores
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE escritores [
+  <!ELEMENT escritores (escritor*)>
+  <!ELEMENT escritor (nombre, nacimiento)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT nacimiento (#PCDATA)>
+]>
+
+<escritores>
+  <escritor>
+    <nombre>Mario Vargas LLosa</nombre>
+    <nacimiento>28 de marzo de 1936</nacimiento>
+  </escritor>
+  <escritor>
+    <nacimiento>1 de abril de 1929</nacimiento>
+    <nombre>Milan Kundera</nombre>
+  </escritor>
+</escritores>
+```
+
+### DTD - Ejercicio 1-7 - Músicos
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE musicos [
+  <!ELEMENT musicos (musico*)>
+  <!ELEMENT musico ((nombre | apodo), fechaNacimiento)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT apodo (#PCDATA)>
+  <!ELEMENT fechaNacimiento (#PCDATA)>
+]>
+
+<musicos>
+  <musico>
+    <nombre>Antonio Vivaldi</nombre>
+    <apodo>El cura pelirrojillo</apodo>
+    <fechaNacimiento>4 de marzo de 1678</fechaNacimiento>
+  </musico>
+  <musico>
+    <nombre>Johann Sebastian Bach</nombre>
+    <apodo>El viejo peluca</apodo>
+    <fechaNacimiento>21 de marzo de 1685</fechaNacimiento>
+  </musico>
+</musicos>
+```
+
+### DTD - Ejercicio 1-8 - Teléfonos de emergencia
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agenda [
+  <!ELEMENT agenda (contacto*)>
+  <!ELEMENT contacto (nombre, telefonoFijo*, telefonoMovil+)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT telefonoFijo (#PCDATA)>
+  <!ELEMENT telefonoMovil (#PCDATA)>
+]>
+
+<agenda>
+  <contacto>
+    <nombre>Ayuntamiento</nombre>
+    <telefonoFijo>010</telefonoFijo>
+  </contacto>
+  <contacto>
+    <nombre>Emergencias</nombre>
+    <telefonoFijo>112 (Unión Europea)</telefonoFijo>
+    <telefonoMovil>Desconocido</telefonoMovil>
+    <telefonoFijo>911 (Estados Unidos)</telefonoFijo>
+  </contacto>
+</agenda>
+```
+
+### DTD - Ejercicio 1-9 - El sistema solar
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sistemaSolar [
+  <!ELEMENT sistemaSolar (cuerpo*)>
+  <!ELEMENT cuerpo (planeta|satelite|asteroide)>
+  <!ELEMENT planeta (#PCDATA)>
+  <!ELEMENT satelite (#PCDATA)>
+  <!ELEMENT asteroide (#PCDATA)>
+]>
+
+<sistemaSolar>
+  <cuerpo>
+    <planeta>Tierra</planeta>
+    <satelite>Luna</satelite>
+  </cuerpo>
+  <asteroide>Ceres</asteroide>
+</sistemaSolar>
+```
+
+### Ejercicio de DTD - Corregir errores de "perifericos.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE perifericos [
+   <!ELEMENT perifericos (#PCDATA)>
+]>
+
+<perifericos>
+   <periferico>impresora</periferico>
+   <periferico>monitor</periferico>
+   <periferico>teclado</periferico>
+</perifericos>
+```
+
+### Ejercicio de DTD - Corregir errores de "perro.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE perro [
+   <!ELEMENT perro (edad, nombre)>
+   <!ELEMENT edad (#PCDATA)>
+   <!ELEMENT nombre (#PCDATA)>
+]>
+
+<perro>
+  <nombre>Pancho</nombre>
+  <edad>8</edad>
+</perro>
+```
+### Ejercicio de DTD - Corregir errores de "caballo.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE caballo [
+   <!ELEMENT caballo (nombre, raza, edad)>
+   <!ELEMENT nombre (#PCDATA)>
+   <!ELEMENT raza (#PCDATA)>
+   <!ELEMENT edad EMPTY>
+]>
+
+<caballo>
+   <nombre>Silvestre</nombre>
+   <raza>Morgan</raza>
+</caballo>
+```
+
+### Ejercicio de DTD - Corregir errores de "mesa.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mesa [
+   <!ELEMENT mesa ANY>
+   <!ELEMENT material (#PCDATA)>
+   <!ELEMENT color (#PCDATA)>
+]>
+
+<mesa>La mesa de <material>madera es de color <color>marrón</color></material>.</mesa>
+```
+### Ejercicio de DTD - Corregir errores de "partes.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE partes [
+   <!ELEMENT partes (secciones)>
+   <!ELEMENT secciones ANY>
+   <!ELEMENT letras (#PCDATA)>
+]>
+
+<secciones>
+   <letras>abc</letras>
+   MNT
+   <letras>xyz</letras>
+</secciones>
+```
+
+### Ejercicio de DTD - Corregir errores de "viajes.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE viajes [
+   <!ELEMENT viajes (austria, italia, francia)>
+   <!ELEMENT austria (ciudad+)>
+   <!ELEMENT italia (ciudad+)>
+   <!ELEMENT francia (ciudad+)>
+   <!ELEMENT ciudad (#PCDATA)>
+]>
+
+<viajes>
+   <austria>
+      <viena/>
+   </austria>
+   <italia>
+      <florencia/>
+      <roma/>
+      <venecia/>
+   </italia>
+   <francia/>
+</viajes>
+```
+
+### Ejercicio de DTD - Corregir errores de "ropa.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ropa [
+   <!ELEMENT ropa (nombre, color*)>
+   <!ELEMENT nombre (#PCDATA)>
+   <!ELEMENT color (#PCDATA)>
+]>
+
+<ropa>
+   <nombre>guante</nombre>
+   <color>rojo</color>
+   <color>blanco</color>
+   <nombre>bufanda</nombre>
+   <color>verde</color>
+   <color>azul</color>
+</ropa>
+```
+
+### Ejercicio de DTD - Corregir errores de "paises.xml"
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE paises [
+   <!ELEMENT paises (pais, ciudad?)*>
+   <!ELEMENT pais (#PCDATA)>
+   <!ELEMENT ciudad (#PCDATA)>
+]>
+
+<paises>
+   <pais>italia</pais>
+   <ciudad>florencia</ciudad>
+   <pais>portugal</pais>
+   <ciudad>lisboa</ciudad>
+   <ciudad>oporto</ciudad>
+   <pais>francia</pais>
+</paises>
+```
+
+### Ejercicio de DTD - Corregir errores de "bebidas.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bebidas [
+   <!ELEMENT bebidas (bebida)*>
+   <!ELEMENT bebida ((codigo | nombre), precio)>
+   <!ELEMENT codigo (#PCDATA)>
+   <!ELEMENT nombre (#PCDATA)>
+   <!ELEMENT precio (#PCDATA)>
+]>
+
+<bebidas>
+   <bebida>
+      <codigo>L45</codigo>
+      <nombre>leche</nombre>
+      <precio>8</precio>
+   </bebida>
+   <bebida>
+      <precio>6</precio>
+   </bebida>
+</bebidas>
+```
+
+### Ejercicio de DTD - Corregir errores de "productos.xml"
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productos [
+   <!ELEMENT productos (producto)*>
+   <!ELEMENT producto (identificacion, nombre)>
+   <!ELEMENT identificacion (#PCDATA | codigo | id)*>
+   <!ELEMENT codigo (#PCDATA)>
+   <!ELEMENT id (#PCDATA)>
+   <!ELEMENT nombre (#PCDATA)>
+]>
+
+<productos>
+   <nombre>martillo</nombre>
+   <identificacion>
+      Quedan 14 unidades.
+      <codigo>MAR264</codigo>
+   </identificacion>
+   <identificacion>
+      <codigo>DES387</codigo>
+      <id>678984</id>
+      No hay stock.
+      <nombre>destornillador</nombre>
+   </identificacion>
+</productos>
+```
+
+
+## Crèdits i bibliografia 
+
+Aquests exercicis estan extrets del llibre _Lenguajes de Marcas y Sistemas de Gestión de Información_ de Carlos Pes
+
+* [Versió en línia](https://www.abrirllave.com/dtd/que-es-dtd.php)
+* [Versió en PDF](https://www.abrirllave.com/lmsgi/libro.php)
+
+i dels apunts de Barlomé Sintes Marco:
+
+* [https://www.mclibre.org/consultar/xml/lecciones/xml-dtd.html](https://www.mclibre.org/consultar/xml/lecciones/xml-dtd.html)

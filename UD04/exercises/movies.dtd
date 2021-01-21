@@ -1,0 +1,14 @@
+<!ELEMENT movies (directors, movie+)>
+<!ELEMENT directors (director+)>
+<!ELEMENT director (#PCDATA)>
+<!ATTLIST director
+          id CDATA #REQUIRED>
+<!ELEMENT movie (title, year, genre?, cast)>
+<!ATTLIST movie
+          director CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT cast (actor | actress)+>
+<!ELEMENT actor (#PCDATA)>
+<!ELEMENT actress (#PCDATA)>
