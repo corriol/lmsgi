@@ -5,7 +5,7 @@
           id CDATA #REQUIRED>
 <!ELEMENT movie (title, year, genre?, cast)>
 <!ATTLIST movie
-          director CDATA #REQUIRED>
+          director IDREFS #REQUIRED>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT year (#PCDATA)>
 <!ELEMENT genre (#PCDATA)>

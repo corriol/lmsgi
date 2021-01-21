@@ -105,8 +105,18 @@ En tots aquests casos:
 
 
 <div markdown="1" class="alert-activity alert">
-**Activitat. Creació d'un arxiu XML basat en una DTD pública**
+**Activitat. Creació d'un arxiu XML basat en una DTD**
 
+Emmagatzema en un document XML les dades de les películes següents:
+
+* Wonder Woman 1984 (2020) 
+* Skylines (2020) 
+* News of the World (2020) 
+* The Bourne Ultimatum (2007) 
+
+basant-te en l'estructura indicada en el DTD [movies.dtd](exercises/movies.dtd).
+
+Inclou com a mínim els tres actors/actrius principals.
 
 </div>
 
