@@ -120,6 +120,20 @@ Inclou com a mínim els tres actors/actrius principals.
 
 </div>
 
+<div markdown="1" class="alert-activity alert">
+**Activitat. Crear un dtd a partir d'un esquema**
+
+Per a l'esquema d'arbre següent: 
+
+![diagrama](assets/esquema.jpeg)
+
+1. Proporciona una DTD que reflexe esta jerarquía suposant que naixement és 
+un element opcional i hi ha almenys una adreça. 
+2. Genera un fitxer XML que faça referència al DTD (de manera interna i externa) 
+i continga almenys dos elements persona.
+
+</div>
+
 ## Crèdits i bibliografia 
 
 En aquesta unitat usarem com a referència el llibre _Lenguajes de Marcas y Sistemas de Gestión de Información_ de Carlos Pes
