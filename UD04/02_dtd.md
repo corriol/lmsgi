@@ -131,7 +131,26 @@ Per a l'esquema d'arbre següent:
 un element opcional i hi ha almenys una adreça. 
 2. Genera un fitxer XML que faça referència al DTD (de manera interna i externa) 
 i continga almenys dos elements persona.
+</div>
 
+
+<div markdown="1" class="alert-activity alert">
+
+**Activitat. Obtenir XML i DTD d'unes dades i requisits.***
+
+Escriure la DTD i l'exemplar de document XML que permeta modelar les dades 
+de vendes d'una editorial:
+
+![Taula](assets/datos-requisitos.png)
+ 
+S'han de tenir en compte les següents consideracions:
+
+* És obligatori que l'informe porte una data.
+* S'ha de poder diferenciar la part de la capçalera de l'informe de la part amb les dades.
+* Sempre han d'aparèixer les tres regions en l'informe, i cap més.
+* Per a cada zona han d'aparèixer sempre els quatre trimestres, tot i que falte la informació sobre els llibres venuts.
+* Si no s'inclou el nombre de llibres venuts en les dades, en l'informe apareixerà la cadena NO_INFO.
+* El nombre de trimestre només pot prendre els valors 1, 2, 3 o 4.
 </div>
 
 ## Crèdits i bibliografia 
